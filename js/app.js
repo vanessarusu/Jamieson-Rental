@@ -3,16 +3,16 @@
 $(document).foundation();
 
 //smooth scroll
-$('a[href^="#"]').on('click',function (e) {
-        e.preventDefault();
+// $('a[href^="#"]').on('click',function (e) {
+//         e.preventDefault();
 
-        var target = this.hash;
-        var $target = $(target);
+//         var target = this.hash;
+//         var $target = $(target);
 
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top
-        }, 500, 'swing');
-    });
+//         $('html, body').stop().animate({
+//             'scrollTop': $target.offset().top
+//         }, 500, 'swing');
+//     });
 
 
 $(document).ready(function() {
@@ -44,3 +44,7 @@ if(window.innerWidth <= 639) {
     }
 
 }); 
+
+$('#truckFleetList li a').on('click', function(){
+        $(':focus').blur();
+    });
