@@ -57,6 +57,7 @@
 $bebas-light: 'bebas-light', Helvetica, sans-serif;
 $bebas-regular: 'bebas-regular', Helvetica, sans-serif;
 $bebas-bold: 'bebas-bold', Helvetica, sans-serif;
+$open-sans: 'Open Sans', Helvetica, sans-serif;
 
 $lightgrey: #b2b2b2;
 $brandRed: #ef3e42;
@@ -67,6 +68,11 @@ $brandOffwhite: #f4f4f4;
 
 
 $dropdownmenu-arrow-color: $brandRed !important;
+
+::selection {
+	color: $brandWhite;
+	background-color: $brandLightBlack;
+}
 
 
 
@@ -221,6 +227,44 @@ $dropdownmenu-arrow-color: $brandRed !important;
 		border-color: $brandOffwhite;
 	}
 }
+.green-button {
+	display: inline-block;
+	text-align: center;
+	border: 2px solid #0A7621;
+	border-radius: 10px 0;
+	background-color: #5EBE53;
+	color: $brandWhite;
+	font-weight: bold;
+	width: 90%;
+	position: relative;
+	margin-left: 20px;
+	&:before {
+		content: '';
+		font-family: 'FontAwesome';
+		font-size: 25px;
+		line-height: 46px;
+		text-align: center;
+		display: inline-block;
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		border: 2px solid #0A7621;
+		background-color: #5EBE53;
+		position: absolute;
+		left: -25px;
+		top: -5px;
+	}
+	&:hover, &:focus {
+		background-color: $brandLightBlack;
+		color: $brandOffwhite;
+		border-color: $brandLightBlack;
+	}
+	&:hover:before, &:focus:before {
+		background-color: $brandLightBlack;
+		border-color: $brandOffwhite;
+	}
+
+}
 .icon-pointer {
 		&:before {
 			content:'\f245';
@@ -234,7 +278,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 	}
 
 .accordion-title {
-	background: $brandBlack;
+	background: $brandLightBlack;
 	color: $brandWhite;
 	padding: 0.5rem 1rem;
 	@include transition(0.2s);
@@ -574,7 +618,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 			font-family: $bebas-bold;
 		}
 		p span {
-			font-family: 'Open Sans', Helvetica, sans-serif;
+			font-family: $open-sans;
 			font-weight: bold;
 		}
 }
@@ -592,7 +636,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 			font-family: $bebas-bold;
 		}
 	p span {
-		font-family: 'Open Sans', Helvetica, sans-serif;
+		font-family: $open-sans;
 		font-weight: bold;
 	}
 	img {
@@ -664,6 +708,11 @@ $dropdownmenu-arrow-color: $brandRed !important;
 	color: $brandWhite;
 	margin-top: 20px;
 
+}
+.go-button-green {
+	border: 2px solid #0A7621;
+	border-radius: 10px 0;
+	background-color: #5EBE53;
 }
 
 #qualityVehicles {
@@ -822,7 +871,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 	padding: 30px 0;
 
 }
-#footer > div > div:first-child {
+#footer > div > div:not(:last-of-type) {
 	border-right: 1px solid $brandRed;
 
 }
@@ -971,7 +1020,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 // GLOBAL -----------------------------------------------------------------
 // ------------------------------------------------------------------------
 // ------------------------------------------------------------------------
-#trucksCommercialHeader, #trucksPersonalHeader, #carSUVHeader, #truckFleetHeader, #aboutUsHeader, #locationsHeader {
+#trucksCommercialHeader, #trucksPersonalHeader, #carSUVHeader, #truckFleetHeader, #aboutUsHeader, #locationsHeader, #searchResultsHeader {
 	background-size: cover !important;
 }
 
@@ -1070,7 +1119,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 
 	}
 	a {
-		font-size: 24px;
+		font-size: 1rem;
 		-webkit-animation-delay: 0.4s;
 		animation-delay: 0.4s;
 		-webkit-animation-fill-mode: backwards;
@@ -1078,6 +1127,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 		float: left;
 		text-align: center;
 		transition: scale(1.0);
+		padding: 5px;
 	}
 	li {
 		@include checkmarkList(16px,20px);
@@ -1517,9 +1567,16 @@ $dropdownmenu-arrow-color: $brandRed !important;
 		position: relative;
 	}
 }
+#expandAll, #expandAll:hover, #expandAll:active, #expandAll:focus {
+	// float: right;
+	font-weight: bold;
+	background-color: $brandOffwhite;
+	color: $brandBlack;
+	border: 2px solid $brandBlack;
+}
 
 #truckFleetList {
-	padding: 70px 0;
+	padding: 20px 0 70px 0;
 	background: $brandOffwhite;
 	ul {
 		li {
@@ -1548,7 +1605,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 				margin-bottom: 0;
 				font-size: 14px;
 				line-height: 16px;
-				font-weight: bold;
+				// font-weight: bold;
 				margin-top: -3px;
 				width: 90%;
 			}
@@ -1691,6 +1748,380 @@ $dropdownmenu-arrow-color: $brandRed !important;
 	border-bottom: 1px solid $brandLightBlack;
 }
 
+// SEARCH RESULTS PAGE -----------------------------------------------------------
+// ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
+
+#searchResultsHeader {
+	background: url(../images/search-results-header.jpg) center top no-repeat;
+	padding: 70px 0;
+	h2 {
+		@include bebasHeader(center);
+		margin-bottom: 2rem;
+	}
+	img {
+		max-width: 70px;
+		margin-bottom: 1rem;
+	}
+	p {
+		font-weight: bold;
+		line-height: 1.2rem;
+	}
+}
+
+#yourItinerary {
+	color: $brandBlack;
+	padding-bottom: 2rem;
+	> div:first-of-type {
+		padding-top: 0.5rem;
+		h2 {
+		// @include bebasHeader(left);
+		font-family: $bebas-bold;
+		float: left;
+		font-size: 2.5rem;
+		margin-right: 2rem;
+		margin-bottom: 0;
+		}
+		a {
+			padding: 0.5rem 4rem;
+			margin-top: 1.2rem;
+			float: left;
+			font-weight: bold;
+			font-size: 1.2rem;
+		}
+		&:after {
+			display: block;
+			content:'';
+			clear: both;
+		}
+	}
+	form {
+		select, input {
+			margin-bottom: 0;
+		}
+		p {
+			font-size: 1rem;
+			font-weight: bold;
+			margin-bottom: 0.5rem;
+		}
+		p.form-sublabel {
+			font-size: 1.5rem;
+		}
+		i {
+			font-size: 2rem;
+		}
+		.go-button {
+			font-size: 2rem;
+		}
+	}
+}
+
+#searchResultsList {
+	margin-top: 50px;
+	margin-bottom: 40px;
+	li {
+		list-style: none;
+	}
+	ul {
+		margin-left: 0;
+	}
+	> div > ul > li {
+		-webkit-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.25);
+		-moz-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.25);
+		box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.25);
+		margin-bottom: 10px;
+		margin: 0;
+	}
+	.resultCard {
+		.resultHeader {
+			background-color: $brandRed;
+			color: $brandWhite;
+			padding: 1rem;
+			h4 {
+				font-family: $bebas-bold;
+				font-size: 3rem;
+				line-height: 3rem;
+				margin-bottom: 0;
+			}
+			p {
+				margin-top: -3px;
+				margin-bottom: 0;
+				font-weight: bold;
+				font-size: 1.2rem;
+			}
+		}
+		.resultBody {
+			padding: 1rem;
+			color: $brandLightBlack;
+			ul {
+				margin-left: 0;
+				li {
+					line-height: 1.4rem;
+				}
+			}
+			.boldListDetails {
+				font-weight: bold;
+				&:after {
+					content:'';
+					display: block;
+					clear: both;
+					margin-bottom: 1.5rem;
+				}
+			}
+		}
+		.unlimitedKMS {
+			border: 2px solid $brandBlack;
+			padding: 0.3rem 0;
+			font-weight: bold;
+			font-size: 1.2rem;
+			margin-bottom: 0.5rem;
+		}
+		.promotion {
+			color: $brandWhite;
+			padding: 0.2rem 0.8rem;
+			background-color: orange;
+			font-weight: bold;
+		}
+		.priceBreakdown {
+			margin-top: 1rem;
+			p {
+				font-family: $bebas-bold;
+				font-size: 3rem;
+				line-height: 2.2rem;
+				margin-bottom: 0;
+				span {
+					font-family: $open-sans;
+					font-size: 0.7rem;
+					font-weight: bold;
+					// margin-left: 10px;
+				}
+			}
+			.red {
+				font-family: $open-sans;
+				font-size: 1rem;
+				margin-top: -10px;
+				a {
+					color: $brandRed;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+.reveal {
+	padding: 0;
+	border: none;
+	h1 {
+		color: $brandWhite;
+		background-color: $brandBlack;
+		font-family: $bebas-bold;
+		padding: 0.5rem;
+		font-size: 3rem;
+		text-align: center;
+	}
+	.columns > p:not(.red) {
+		font-size: 1.6rem;
+		font-weight: bold;
+		margin-bottom: 0;
+	}
+	ul {
+		list-style: none;
+		margin-left: 0;
+		> li {
+			ul {
+				display: flex;
+				border-top: 1px solid $brandBlack;
+				&:last-of-type {
+					// background-color: red;
+				}
+				li {
+					flex: 2;// border-bottom: none;
+					&:last-of-type {
+						text-align: right;
+						// background-color: blue;
+					}
+				}
+			}
+
+		}
+	}
+	.bold {
+		font-weight: bold;
+	}
+	.red {
+		font-family: $bebas-bold;
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+	.rates {
+		p:first-of-type {
+			// font-size: 1rem;
+			font-weight: bold;
+			border-bottom: 1px solid $brandBlack;
+		}
+	}
+	table {
+		text-align: center;
+		tbody {
+			border: none;
+		}
+		tr:first-of-type {
+			color: $brandWhite;
+			background-color: $brandBlack;
+		}
+		tr:nth-child(even) {
+			background-color: $brandWhite
+		}
+		tr:last-of-type {
+			border-bottom: 1px solid $brandBlack;
+		}
+	}
+}
+// }
+
+// HELPFUL TIPS PAGE -----------------------------------------------------------
+// ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
+
+#helpfulTipsHeader {
+	background-color: $brandBlack;
+	color: $brandWhite;
+	padding: 50px 0;
+	img {
+		margin-top: 1rem;
+		max-width: 123px;
+	}
+	h2 {
+		@include bebasHeader(left);
+	}
+	p {
+		font-weight: bold;
+		font-size: 1.5rem;
+		line-height: 1.8rem;
+	}
+}
+.featured-article {
+	.article-header {
+		background-color: $brandRed;
+		padding: 0.4rem;
+		color: $brandWhite;
+		h4 {
+			font-family: $bebas-bold;
+			font-size: 2rem;
+			line-height: 2.2rem;
+			margin-bottom: 0;
+		}
+	}
+	.article-body {
+		margin-top: 1.5rem;
+		h5 {
+			color: $brandRed;
+			font-size: 1.5rem;
+			line-height: 24px;
+			font-weight: bold;
+		}
+		p {
+			color: $brandLightBlack;
+
+		}
+		a {
+			padding: 5px 60px;
+			font-weight: bold;
+		}
+	}
+}
+
+.search {
+	margin: 2rem auto;
+}
+.sub-articles {
+	margin-bottom: 2rem;
+	h5 {
+		background-color: $brandBlack;
+		color: $brandWhite;
+		font-family: $bebas-bold;
+		font-size: 1.6rem;
+		padding: 0.2rem 0.4rem;
+	}
+	ul {
+		margin-left: 0.4rem;
+		li {
+			list-style: none;
+			line-height: 1.3rem;
+			a {
+				font-weight: bold;
+				transition: color 0.2s ease-in-out;
+				font-size: 0.8rem;
+				&:hover {
+					color: $brandLightBlack;
+				}
+			}
+		}
+	}
+	> a {
+		color: $brandRed;
+		font-weight: bold;
+		margin-left: 0.4rem;
+		transition: color 0.2s ease-in-out;
+		&:hover {
+			color: $brandLightBlack;
+		}
+	}
+}
+
+.card {
+	-webkit-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.15);
+	-moz-box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.15);
+	box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.15);
+	padding-bottom: 0.8rem;
+	margin-bottom: 2rem;
+	h5 {
+		background-color: $brandOffwhite;
+		font-family: $bebas-bold;
+		color: $brandBlack;
+		padding: 0.2rem 0.6rem;
+		font-size: 1.6rem;
+	}
+	ul {
+		li {
+			list-style: none;
+			line-height: 1.3rem;
+			a {
+				font-weight: bold;
+				color: $brandLightBlack;
+				transition: color 0.2s ease-in-out;
+				font-size: 0.8rem;
+				&:before {
+					content: '\f138';
+					color: $brandRed;
+					display: inline-block;
+					font-family: 'FontAwesome';
+					margin: 0 10px 0 -8px;
+				}
+			}
+		}
+	}
+}
+
+#helpfulTipsCTA {
+	img {
+		width: 100%;
+		max-width: 70px;
+		margin-bottom: 1rem;
+	}
+	p {
+		font-family: $bebas-bold;
+		font-size: 1.5rem;
+		line-height: 1.6rem;
+		text-align: left;
+	}
+	.row {
+		max-width: 90%;
+		margin: 0 auto;
+	}
+}
+
+
 
 
 // MEDIA QUERIES  ---------------------------------------------------------
@@ -1815,7 +2246,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
  		width: 100%;
  		margin: 0.5% 0;
 	}
-	#trucksCommercialHeader h2, #trucksCommercialHeader h3, #trucksPersonalHeader h2, #trucksPersonalHeader h3, #carSUVHeader h2, #carSUVHeader h3, #truckFleetHeader h2 {
+	#trucksCommercialHeader h2, #trucksCommercialHeader h3, #trucksPersonalHeader h2, #trucksPersonalHeader h3, #carSUVHeader h2, #carSUVHeader h3, #truckFleetHeader h2, #aboutUsHeader h2, #locationsHeader h2, #helpfulTipsHeader h2 {
 		text-align: center;
 		font-size: 42px;
 		line-height: 42px;
@@ -1964,6 +2395,54 @@ $dropdownmenu-arrow-color: $brandRed !important;
 		margin: 0 auto;
 		background-color: transparent;
 	}
+	#searchResultsHeader {
+		img {
+			max-width: 40px;
+			margin-bottom: 0.3rem;
+		}
+	}
+
+	#yourItinerary {
+		> div:first-of-type h2 {
+			text-align: center;
+			width: 100%;
+		}
+		> div:first-of-type a {
+			float: none;
+			text-align: center;
+			width: 70%;
+			margin: 0 auto;
+			display: flex;
+			flex-align: center;
+			justify-content: center;
+		}
+		.row {
+			max-width: 95%;
+			margin: 0 auto;
+		}
+	}
+	#searchResultsList {
+		.medium-5.medium-pull-1 {
+			margin-top: 1rem;
+		}
+		.resultCard {
+			.priceBreakdown {
+				p {
+					font-size: 2.3rem;
+				}
+			}
+		}
+	}
+
+	#helpfulTipsHeader {
+		text-align: center;
+		img {
+			margin-bottom: 1rem;
+			max-width: 100px;
+		}
+	}
+
+
 }
 
 // LOCATION MAP FIX ---------------------------------------------------------
@@ -2057,6 +2536,16 @@ $dropdownmenu-arrow-color: $brandRed !important;
 
 	#truckFleetList ul li .row>.medium-4 {
 		padding: 0 20px;
+	}
+
+	#searchResultsList {
+		.resultCard {
+			.priceBreakdown {
+				p {
+					font-size: 2.2rem;
+				}
+			}
+		}
 	}
 
 }
@@ -2164,9 +2653,21 @@ $dropdownmenu-arrow-color: $brandRed !important;
 			text-align: center;
 		}
 	}
+	#truckFleetHeader li {
+		text-align: left;
+	}
 	#locationMaps .location-info p, #locationMaps .location-info a {
 		font-size: 1rem;
 		line-height: 1.4rem;
+	}
+	#trucksCommercialHeader h2 {
+		text-align: center;
+	}
+
+	#helpfulTipsCTA {
+		p {
+			text-align: center;
+		}
 	}
 
 }

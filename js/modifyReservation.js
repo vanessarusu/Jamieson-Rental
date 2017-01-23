@@ -43,7 +43,7 @@ function validateForm() {
         if(pickupDate.date.getTime() == dropoffDate.date.getTime()) {
             console.log('in the if statement where pickupDate getTime and DropoffDate getTime are the same');
             if(dropOffTime >= pickupTime) {
-                // dateTextHint.innerHTML='Dates are not valid';
+                dateTextHint.innerHTML='Dates are not valid';
                 formNotValid();
                 console.log('form isnt valid from dropoffTime is bigger or equal to pickup time');
             return;
@@ -69,12 +69,12 @@ function validateForm() {
 
 function formIsValid() {
     buttonValidation.classList.remove('gray-button');
-    buttonValidation.classList.add('go-button-green');
+    buttonValidation.classList.add('red-button');
     submitReservation.disabled = false;
 }
 function formNotValid() {
     buttonValidation.classList.add('gray-button');
-    buttonValidation.classList.remove('go-button-green');
+    buttonValidation.classList.remove('red-button');
     submitReservation.disabled = true;
 }
 

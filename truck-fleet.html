@@ -53,7 +53,7 @@
                             <ul class="vertical menu">
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="#">Contact</a></li>
-                                <li><a href="#">Locations</a></li>
+                                <li><a href="locations.html">Locations</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -131,7 +131,7 @@
                                                 <ul class="dropDown">
                                                     <li><a href="about.html">About Us</a></li>
                                                     <li><a href="#">Contact</a></li>
-                                                    <li><a href="#">Locations</a></li>
+                                                    <li><a href="locations.html">Locations</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -148,9 +148,9 @@
 
                 <section id="truckFleetHeader" class="expanded row">
                     <div class="row">
-                        <div class="large-5 columns black-cta-panel animated fadeInLeft" data-equalizer-watch>
+                        <div class="large-5 columns black-cta-panel animated fadeIn" data-equalizer-watch>
                             <div class="calloutContainer">
-                                <h2 class="animated fadeInLeft">Quality Cargo Vans, Cube Vans, 24 Foot Trucks &amp; Pickups</h2>
+                                <h2 class="animated fadeIn">Quality Cargo Vans, Cube Vans, 24 Foot Trucks &amp; Pickups</h2>
                                 <ul>
                                     <li>Modern &amp; Fuel-Efficient</li>
                                     <li>Reliable &amp; Well Maintained</li>
@@ -158,7 +158,7 @@
                                     <li>Guaranteed Reservations</li>
                                     <li>Friendly Experts</li>
                                 </ul>
-                                <a class="red-button animated fadeInRight" href="tel:1-866-577-0760">Speak With An Expert<br>1-866-577-0760</a>
+                                <a class="red-button animated fadeIn" href="tel:1-866-577-0760">Speak With An Expert<br>1-866-577-0760</a>
                             </div>
                         </div>
                     </div>
@@ -170,6 +170,10 @@
 
                 <section id="truckFleetList">
                     <div class="row">
+                    <div class="text-right">
+                        <a id="expandAll" class="button">Expand All</a>
+                        
+                    </div>
                         <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
                             <li class="accordion-item is-active" data-accordion-item>
                                 <a href="#" class="accordion-title">
@@ -483,13 +487,6 @@
                                     </div>
                                 </div>
                             </li>
-
-   
-
-
-
-
-
                         </ul>
                     </div>
                 </section>
@@ -567,7 +564,7 @@
                             <a href="#">About Us</a>
                             <ul>
                                 <li><a href="#">Contact</a></li>
-                                <li><a href="#">Locations</a></li>
+                                <li><a href="locations.html">Locations</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -589,5 +586,22 @@
             <script src="node_modules/foundation-datepicker/js/foundation-datepicker.js"></script>
             <script src="js/app.js"></script>
             <script src="js/reservations.js"></script>
+
+            <script type="text/javascript">
+
+                $(function(){
+                    $('#expandAll').on('click', function(){
+                        if($('#expandAll').text()=='Expand All'){
+                            $('.accordion-title:not([aria-expanded=true])').trigger('click');
+                            $('#expandAll').text('Collapse All');
+                        }
+                        else if($('#expandAll').text()=='Collapse All') {
+                            $('.accordion-title:not([aria-expanded=false])').trigger('click');
+                            $('#expandAll').text('Expand All');
+                        }
+                    });
+                });
+
+            </script>
         </body>
 </html>
