@@ -1,18 +1,37 @@
 var reserveForm = document.querySelector('#reserveForm');
+console.log(reserveForm);
 
 var formValid = false;
 var pickupDate = false;
 var dropoffDate = false;
+var selectedDropOff;
+var selectedPickUp;
+var vehicleType;
+var location;
+
+
 var submitReservation = document.querySelector('#submitReservation');
 submitReservation.disabled = true;
+
 var buttonValidation = document.querySelector("#buttonValidation");
 var KMS = document.querySelector('#KMS');
 var estimatedKMS = document.querySelector('#estimatedKMS');
-if(estimatedKMS) {
-    estimatedKMS.value = '';
-}
+
+
+
+var pickupTime = document.querySelector('#pickupTime').value;
+var dropOffTime = document.querySelector('#dropOffTime').value;
+
+
+
+
+// if(estimatedKMS) {
+//     estimatedKMS.value = '';
+// }
+
 var selectedVehicle = document.querySelector('input[name="vehicle"]:checked').value;
 var dateTextHint = document.querySelector('.dateTextHint');
+pickupLocation = document.querySelector('select[name="location"]').value;
 // var buttonTextHint = document.querySelector('.buttonTextHint');
 
 
@@ -35,73 +54,133 @@ function addKMS() {
 function validateForm() {
     // dateTextHint.innerHTML ='';
     // buttonTextHint.innerHTML ='';
-        
-    var pickupTime = document.querySelector('#pickupTime').value;
-    var dropOffTime = document.querySelector('#dropOffTime').value;
-    // console.log(pickupDate.date.getTime());
-    // console.log(dropoffDate.date.getTime());
-        if(pickupDate.date.getTime() == dropoffDate.date.getTime()) {
+    // console.log($('input:radio[name=vehicle]'));
+    // vehicleType = $('input:radio[name=vehicle]');
+    // location = $('select[name="location"]');
+
+    selectedPickUp = $('#pickupDate').datepicker("getDate");
+    selectedDropOff = $('#dropOffDate').datepicker("getDate");
+
+
+    // if both pickup and drop off times are filled out
+
+    if(selectedPickUp && selectedDropOff) {
+        console.log('in the validation');
+
+
+        // if both dates are on the same day
+        if(selectedPickUp.getTime() == selectedDropOff.getTime()) {
             console.log('in the if statement where pickupDate getTime and DropoffDate getTime are the same');
+            
             if(dropOffTime >= pickupTime) {
                 // dateTextHint.innerHTML='Dates are not valid';
                 formNotValid();
                 console.log('form isnt valid from dropoffTime is bigger or equal to pickup time');
             return;
             }
-    }
-    if (selectedVehicle == 'truck-option') {
-        if(pickupDate != false && (estimatedKMS.value !=false || estimatedKMS.value != 0 || estimatedKMS.value !='') && estimatedKMS.value > -1) {
-            formIsValid();
+        }
+
+        // if the renter is choosing a truck, make sure estimated kms is filled out
+        if (selectedVehicle == 'truck-option') {
+            // var estimatedKMS = document.querySelector('#estimatedKMS').value;
+            console.log('in the selected truck option');
+            console.log(selectedPickUp);
+            console.log(estimatedKMS.value);
+            if(selectedPickUp != false && (estimatedKMS.value !=false || estimatedKMS.value != 0 || estimatedKMS.value !='') && estimatedKMS.value > -1) {
+                formIsValid();
+            }
+            else {
+                formNotValid();
+            }
+        }
+        // if the renter is choosing anything other than a truck
+        else if(selectedVehicle !='truck-option') {
+            if(selectedPickUp && selectedDropOff) {
+                formIsValid();
+            }
         }
         else {
             formNotValid();
         }
     }
-    else if(selectedVehicle !='truck-option') {
-        if(pickupDate !=false) {
-            formIsValid();
-        }
-    }
-    else {
-        formNotValid();
-    }
 }
 
 function formIsValid() {
+    //change button appearance and enable click
     buttonValidation.classList.remove('gray-button');
     buttonValidation.classList.add('go-button-green');
     submitReservation.disabled = false;
 }
 function formNotValid() {
+    //change button appearance and disable click;
     buttonValidation.classList.add('gray-button');
     buttonValidation.classList.remove('go-button-green');
     submitReservation.disabled = true;
 }
 
 
-var nowTemp = new Date();
-var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-var pickupDate = $('#pickupDate').fdatepicker({
-    onRender: function (date) {
-        return date.valueOf() < now.valueOf() ? 'disabled' : '';
-    }
-}).on('changeDate', function (ev) {
-    if (ev.date.valueOf() > dropoffDate.date.valueOf()) {
-        var newDate = new Date(ev.date)
-        newDate.setDate(newDate.getDate() + 2);
-        dropoffDate.update(newDate);
-    }
-    pickupDate.hide();
-    validateForm();
-    $('#dropoffDate')[0].focus();
-}).data('datepicker');
-var dropoffDate = $('#dropoffDate').fdatepicker({
-    onRender: function (date) {
-        return date.valueOf() <= pickupDate.date.valueOf() ? 'disabled' : '';
-    }
-}).on('changeDate', function (ev) {
-    dropoffDate.hide();
-    validateForm();
-}).data('datepicker');
+$( "#pickupDate" ).datepicker({
+    minDate: 0,
+    showOtherMonths: true,
+    buttonImage: "/images/calendar-datepicker-icon.png",
+    showOn: 'both',
+    gotoCurrent: true,
+    defaultDate: +1,
+    prevText: "<< ",
+    nextText: ' >>',
+    onSelect: function (evt, ui) {
+            var dropoffDate = $('#dropOffDate');
+            var startDate = $(this).datepicker('getDate');
+            startDate.setDate(startDate.getDate() + 1);
+            var minDate = $(this).datepicker('getDate');
+            dropoffDate.datepicker('setDate', startDate);
+            dropoffDate.datepicker('option', 'minDate', startDate);
+            validateForm();
+            // $(this).datepicker('option', 'minDate', minDate);
+        }
+});
 
 
+
+$( "#dropOffDate" ).datepicker({
+    minDate: 0,
+    showOtherMonths: true,
+    buttonImage: "/images/calendar-datepicker-icon.png",
+    showOn: 'both',
+    gotoCurrent: true,
+    defaultDate: +1,
+    nextText: ' >>',
+    prevText: '<< ',
+    onSelect: function (evt, ui) {
+            validateForm();
+        }
+});
+
+$('form').submit(function(e){
+    e.preventDefault();
+
+    console.log('in the submit');
+    var formdata = {
+        vehicle : selectedVehicle,
+        pickupLocation : pickupLocation,
+
+        pickupDate : selectedPickUp,
+        pickupTime : pickupTime,
+
+        dropOffDate : selectedDropOff,
+        dropOffTime : dropOffTime,
+        estimatedKMS : estimatedKMS
+    };
+    console.log(formdata);
+    // $.ajax({
+    //     type: 'POST',
+    //     url: '#',
+    //     data: formdata,
+    //     dataType: json,
+    //     encode: true
+    // })
+    // .done(function(data){
+    //     console.log(data);
+    // });
+    // e.preventDefault();
+});

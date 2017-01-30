@@ -324,7 +324,7 @@
             <section id="reserve">
                 <div class="row" data-equalizer data-equalize-on-stack="false">
                     <h3 class="small-10 small-offset-1 red title text-center">Price &amp; Reserve Your Vehicle Online</h3>
-                    <form id="reserveForm" action="action_page.php" method="get">
+                    <form id="reserveForm" action="action_page.php" method="POST">
                         <div class="large-2 columns arrow_box" data-equalizer-watch>
                             <div class="row">
                                 <div class="small-10 small-offset-1 large-11 large-offset-0 columns">
@@ -364,13 +364,9 @@
                                 <div class="small-10 small-offset-1 columns">
                                     <p class="reserve-title">Dates &amp; Times</p>
                                     <p class="form-sublabel">Pickup</p>
-
-                                    <div class="row collapse date" id="pickupDate" data-date-format="dd/mm/yyyy">
-                                        <div class="small-2 columns date-icon">   
-                                            <span class="prefix"><i class="fa fa-calendar"></i></span>
-                                        </div>
-                                        <div class="small-6 columns">
-                                            <input size="16" type="text" value="mm/dd/yy" readonly>  
+                                    <div class="row collapse">
+                                        <div class="small-7 small-offset-1 columns icon-container">
+                                            <input type="text" name="" id="pickupDate">
                                         </div>
                                         <div class="small-4 columns">
                                             <select id="pickupTime" onchange="validateForm()">
@@ -394,12 +390,9 @@
 
                                     <p class="form-sublabel">Return</p>
 
-                                    <div class="row collapse date" id="dropoffDate" data-date-format="dd/mm/yyyy">
-                                        <div class="small-2 columns date-icon">   
-                                            <span class="prefix"><i class="fa fa-calendar"></i></span>
-                                        </div>
-                                        <div class="small-6 columns">
-                                            <input size="16" type="text" value="mm/dd/yy" readonly>  
+                                    <div class="row collapse date">
+                                        <div class="small-7 small-offset-1 columns icon-container">
+                                            <input type="text" name="dropOffDate" id="dropOffDate">  
                                         </div>
                                         <div class="small-4 columns">
                                             <select id="dropOffTime" onchange="validateForm()">
@@ -528,8 +521,11 @@
 
             <script src="bower_components/foundation-sites/js/foundation.equalizer.js"></script>
             <script src="bower_components/foundation-sites/js/foundation.offcanvas.js"></script>
-            <script src="node_modules/foundation-datepicker/js/foundation-datepicker.js"></script>
-            <script src="node_modules/foundation-datepicker/js/foundation-datepicker-disabled.js"></script>
+            
             <script src="js/app.js"></script>
+            <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+            <script src="js/reservations.js"></script>
         </body>
 </html>

@@ -65,6 +65,7 @@ $brandBlack: #231f20;
 $brandLightBlack: #4A4A4A;
 $brandWhite: #ffffff;
 $brandOffwhite: #f4f4f4;
+$brandGreen: #5EBE53;
 
 
 $dropdownmenu-arrow-color: $brandRed !important;
@@ -125,6 +126,9 @@ $dropdownmenu-arrow-color: $brandRed !important;
 .white {
 	color: $brandWhite;
 }
+.green {
+	color: $brandGreen;
+}
 .gray-bg {
 	background-color: $brandOffwhite;
 }
@@ -142,12 +146,12 @@ $dropdownmenu-arrow-color: $brandRed !important;
 	padding: 0;
 }
 .red-button:hover, .black-button:hover {
-	-webkit-transform: scale(1.1); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: scale(1.1); /* IE 9 */
-	transform: scale(1.1);
+	-webkit-transform: scale(1.02); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: scale(1.02); /* IE 9 */
+	transform: scale(1.02);
 }
 
-.red-button {
+.red-button, .red-button:active, .red-button:focus {
 	display: inline-block;
 	text-align: center;
 	border: 2px solid $brandRed;
@@ -183,11 +187,11 @@ $dropdownmenu-arrow-color: $brandRed !important;
     -ms-transform: scale(1.0); /* IE 9 */
 	transform: scale(1.0);
 	@include transition(0.2s);
-	&:hover {
+	&:hover, &:active, &:focus {
 		background-color: $brandBlack;
-		-webkit-transform: scale(1.1); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    	-ms-transform: scale(1.1); /* IE 9 */
-		transform: scale(1.1);
+		-webkit-transform: scale(1.02); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    	-ms-transform: scale(1.02); /* IE 9 */
+		transform: scale(1.02);
 	}
 }
 
@@ -666,6 +670,9 @@ $dropdownmenu-arrow-color: $brandRed !important;
 	h3 {
 		margin-bottom: 50px;
 	}
+	input, select {
+		margin-bottom: 0;
+	}
 }
 
 .gray-bg {
@@ -694,11 +701,57 @@ $dropdownmenu-arrow-color: $brandRed !important;
 	}
 
 }
-.date-icon {
-	font-size: 25px;
-	text-align: left;
-	color: $brandRed;
+.icon-container {
+	position: relative;
+	button img {
+		position: absolute;
+		top: 0;
+		left: -35px;
+		max-width: 30px;
+
+	}
 }
+.ui-datepicker {
+	background-color: $brandOffwhite;
+	.ui-datepicker-header {
+		padding: 1rem;
+		color: $brandWhite;
+		background: $brandRed;
+		text-align: center;
+		font-weight: bold;
+		.ui-datepicker-next {
+			float: right;
+			margin-right: 1rem;
+		}
+		.ui-datepicker-prev {
+			float: left;
+			margin-left: 1rem;
+		}
+	}
+	a {
+		font-weight: bold;
+	}
+	.ui-state-active {
+		// color: $brandRed;
+	}
+	.ui-datepicker-current-day {
+		background: $brandGreen;
+		a {
+			color: $brandWhite;
+		}
+	}
+	.ui-datepicker-today:not(.ui-datepicker-current-day) {
+		background: rgba(0,0,0,0.09);
+	}
+	table tbody td {
+		text-align: center;
+	}
+}
+// .date-icon {
+// 	font-size: 25px;
+// 	text-align: left;
+// 	color: $brandRed;
+// }
 
 .go-button {
 	font-family: $bebas-bold;
@@ -972,7 +1025,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 	height: 60px;
 	background-color: $brandRed;
 	border-radius: 100%;
-	z-index: 10;
+	z-index: 0;
 	-webkit-box-shadow: 0px 7px 22px -5px rgba(0,0,0,0.24);
 	-moz-box-shadow: 0px 7px 22px -5px rgba(0,0,0,0.24);
 	box-shadow: 0px 7px 22px -5px rgba(0,0,0,0.24);
@@ -2122,6 +2175,155 @@ $dropdownmenu-arrow-color: $brandRed !important;
 	}
 }
 
+// RESERVATIONS PAGE -----------------------------------------------------------
+// ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
+
+#reservationsHeader {
+	padding: 30px 0;
+	color: $brandBlack;
+	h2 {
+		@include bebasHeader(left);
+	}
+	a {
+		font-weight: bold;
+	}
+}
+#resSummary {
+	> img {
+		margin-bottom: 1rem;
+		width: 100%;
+	}
+	p {
+		font-weight: bold;
+		margin: 0.1rem auto;
+		padding: 0;
+	}
+	p:first-of-type {
+		font-size: 1.4rem;
+		// margin-top: 1rem;
+		line-height: 1.6rem;
+		font-weight: bold;
+	}
+	.small-9 {
+		padding: 0;
+	}
+	.small-3 {
+		padding-right: 0;
+	}
+	.small-3 img {
+		float: right;
+	}
+	a {
+		margin-top: 1.2rem;
+		padding: 0.5rem 0;
+	}
+}
+
+#resInformation {
+	p {
+		font-size: 1.4rem;
+		font-weight: bold;
+		padding-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	> div:not(:last-of-type) {
+		border-bottom: 1px solid $brandLightBlack;
+	}
+
+	ul {
+		list-style: none;
+		margin-left: 0;
+		padding-bottom: 0.5rem;
+		li {
+			font-weight: 1rem;
+			line-height: 1.2rem;
+			margin-bottom: 0.3rem;
+			span {
+				font-weight: bold;
+			}
+		}
+	}
+	input[type="checkbox"] {
+		margin: 0;
+	}
+	ul.leaders {
+		overflow-x: hidden;
+		padding: 0;
+		li {
+			position: relative;
+			z-index: 10;
+		}
+		li:after {
+			content:'................................................................................................................................................................................................';
+			float: left;
+			position: absolute;
+			white-space: nowrap;
+		}
+		li span:last-of-type {
+			float: right;
+			position: relative;
+			padding-left: 0.3rem;
+			z-index: 20;
+			background: $brandOffwhite;
+		}
+		a {
+			color: $brandRed;
+			text-decoration: underline;
+		}
+	}
+	.green {
+		font-weight: bold;
+		ul {
+		
+			li {
+				// margin-left: 1rem;
+				&:before {
+					font-family: 'FontAwesome';
+					content: '\f00c';
+					margin-right: 0.3rem;
+				}
+			}
+		}
+	}
+}
+#rentalDetails {
+	border-bottom: 1px solid $brandLightBlack;
+	h2 {
+		@include bebasHeader(left);
+		margin-top: 2.5rem;
+	}
+	label {
+		font-weight: bold;
+		font-size: 1.2rem;
+	}
+	a.button {
+		font-family: $bebas-bold;
+		font-size: 2.8rem;
+		padding: 1rem;
+		width: 100%;
+
+	}
+}
+
+#termsAndConditions {
+	background-color: $brandLightBlack;
+	padding: 2rem;
+	h3 {
+		font-size: 2rem;
+		font-weight: bold;
+		margin-top: 2rem;
+	}
+	p {
+		line-height: 1.2rem;
+	}
+	p.termTitle {
+		font-weight: bold;
+		margin-top: 2rem;
+		margin-bottom: 0;
+		padding: 0;
+	}
+}
 
 
 
@@ -2441,6 +2643,13 @@ $dropdownmenu-arrow-color: $brandRed !important;
 			margin-bottom: 1rem;
 			max-width: 100px;
 		}
+	}
+
+	#reservationsHeader a.black-button, #resInformation a.red-button {
+		max-width: 300px;
+	}
+	#resInformation ul.leaders li, #resInformation ul li {
+		font-size: 0.7rem;
 	}
 
 
