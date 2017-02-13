@@ -65,17 +65,17 @@ function validateForm() {
     // if both pickup and drop off times are filled out
 
     if(selectedPickUp && selectedDropOff) {
-        console.log('in the validation');
+        // console.log('in the validation');
 
 
         // if both dates are on the same day
         if(selectedPickUp.getTime() == selectedDropOff.getTime()) {
-            console.log('in the if statement where pickupDate getTime and DropoffDate getTime are the same');
+            // console.log('in the if statement where pickupDate getTime and DropoffDate getTime are the same');
             
             if(dropOffTime >= pickupTime) {
                 // dateTextHint.innerHTML='Dates are not valid';
                 formNotValid();
-                console.log('form isnt valid from dropoffTime is bigger or equal to pickup time');
+                // console.log('form isnt valid from dropoffTime is bigger or equal to pickup time');
             return;
             }
         }
@@ -122,7 +122,7 @@ function formNotValid() {
 $( "#pickupDate" ).datepicker({
     minDate: 0,
     showOtherMonths: true,
-    buttonImage: "/images/calendar-datepicker-icon.png",
+    buttonImage: "images/calendar-datepicker-icon.png",
     showOn: 'both',
     gotoCurrent: true,
     defaultDate: +1,
@@ -145,7 +145,7 @@ $( "#pickupDate" ).datepicker({
 $( "#dropOffDate" ).datepicker({
     minDate: 0,
     showOtherMonths: true,
-    buttonImage: "/images/calendar-datepicker-icon.png",
+    buttonImage: "images/calendar-datepicker-icon.png",
     showOn: 'both',
     gotoCurrent: true,
     defaultDate: +1,
