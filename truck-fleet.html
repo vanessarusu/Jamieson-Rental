@@ -31,7 +31,7 @@
                 <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
                     <ul class="vertical menu" data-drilldown>
                         <li>
-                            <a>Truck Rentals</a>
+                            <a href="#" class="active-page">Truck Rentals</a>
                             <ul class="vertical menu">
                                 <li><a href="trucks-commercial.html">Trucks for Business</a></li>
                                 <li><a href="trucks-personal.html">Trucks for Personal</a></li>
@@ -109,7 +109,7 @@
                                         <h2 class="hidden">Main Navigation</h2>
                                         <ul class="dropdown menu" data-dropdown-menu data-disable-hover="true">
                                             <li>
-                                                <a href="#">Truck Rentals</a>
+                                                <a href="#" class="active-page">Truck Rentals</a>
                                                 <ul class="dropDown"> 
                                                     <li><a href="trucks-commercial.html">Trucks for Business</a></li>
                                                     <li><a href="trucks-personal.html">Trucks for Personal</a></li>
@@ -158,13 +158,178 @@
                                     <li>Guaranteed Reservations</li>
                                     <li>Friendly Experts</li>
                                 </ul>
-                                <a class="red-button animated fadeIn" href="tel:1-866-577-0760">Speak With An Expert<br>1-866-577-0760</a>
+                                <div class="medium-12 columns">
+                                    <a class="red-button animated fadeIn" href="tel:1-866-577-0760">Speak With An Expert<br>1-866-577-0760</a>
+                                </div>
+                                
+                                <div class="medium-12 columns">
+                                    <a id="bookOnline" href="#" class="red-button animated fadeIn">Book Online</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
+
     <!-- END TRUCKS PERSONAL HERO PANEL -->
+
+
+
+                <script type="text/javascript">
+                    $('#bookOnline').click(function(e){
+                        e.preventDefault();
+                        $('#reserve').slideToggle();
+                        this.blur();
+                    });
+                </script>
+
+
+
+
+
+    <!-- START TOGGLE RESERVATIONS PANEL -->
+
+
+    <section id="reserve" style="display:none;">
+                <div class="row">
+                    <h3 class="small-10 small-offset-1 red title text-center">Price &amp; Reserve Your Vehicle Online</h3>
+                    <form id="reserveForm" action="search-results.html" method="POST">
+                        <div class="large-2 columns arrow_box">
+                            <div class="row">
+                                <div class="small-10 small-offset-1 large-11 large-offset-0 columns">
+                                    <p class="reserve-title">Vehicle</p>
+                                    <div class="vehicle-select">
+                                        <div class="small-6 large-12 columns no-padding">
+                                            <input type="radio" name="vehicle" value="truck-option" id="truck-option" checked onclick="addKMS()">
+                                                <label for="truck-option">Truck</label>
+                                                <div class="check">
+                                                    <div class="inside"></div>
+                                                </div>
+                                        </div>
+                                        <div class="small-6 large-12 columns no-padding">
+                                            <input type="radio" name="vehicle" value="car-option" id="car-option" onclick="removeKMS()">
+                                                <label for="car-option">Car</label>
+                                                <div class="check">
+                                                    <div class="inside"></div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="large-3 columns arrow_box">
+                            <div class="row">
+                                <div class="small-10 small-offset-1 columns">
+                                    <p class="reserve-title">Location</p>
+                                    <select name="location">
+                                        <option value="Kitchener">Kitchener</option>
+                                        <option value="Woodstock">Woodstock</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="large-4 columns arrow_box">
+                            <div class="row">
+                                <div class="small-10 small-offset-1 columns">
+                                    <p class="reserve-title">Dates &amp; Times</p>
+                                    <p class="form-sublabel">Pickup</p>
+                                    <div class="row collapse">
+                                        <div class="small-7 small-offset-1 columns icon-container">
+                                            <input type="text" name="" id="pickupDate">
+                                        </div>
+                                        <div class="small-4 columns">
+                                            <select id="pickupTime" onchange="validateForm()">
+                                                <option value="700">7:00am</option>
+                                                <option value="800">8:00am</option>
+                                                <option value="900">9:00am</option>
+                                                <option value="1000">10:00am</option>
+                                                <option value="1100">11:00am</option>
+                                                <option value="1200">12:00pm</option>
+                                                <option value="1300">1:00pm</option>
+                                                <option value="1400">2:00pm</option>
+                                                <option value="1500">3:00pm</option>
+                                                <option value="1600">4:00pm</option>
+                                                <option value="1700">5:00pm</option>
+                                                <option value="1800">6:00pm</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                               
+
+                                    <p class="form-sublabel">Return</p>
+
+                                    <div class="row collapse date">
+                                        <div class="small-7 small-offset-1 columns icon-container">
+                                            <input type="text" name="dropOffDate" id="dropOffDate">  
+                                        </div>
+                                        <div class="small-4 columns">
+                                            <select id="dropOffTime" onchange="validateForm()">
+                                                <option value="700">7:00am</option>
+                                                <option value="800">8:00am</option>
+                                                <option value="900">9:00am</option>
+                                                <option value="1000">10:00am</option>
+                                                <option value="1100">11:00am</option>
+                                                <option value="1200">12:00pm</option>
+                                                <option value="1300">1:00pm</option>
+                                                <option value="1400">2:00pm</option>
+                                                <option value="1500">3:00pm</option>
+                                                <option value="1600">4:00pm</option>
+                                                <option value="1700">5:00pm</option>
+                                                <option value="1800">6:00pm</option>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="dateTextHint"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="large-3 columns">
+                            <div class="row">
+                                <div class="small-10 small-offset-1 columns">
+                                    <div id="KMS">
+                                        <p class="reserve-title">Estimated Mileage</p>
+                                        <div class="row">
+                                            <div class="small-9 columns">
+                                                <input id="estimatedKMS" type="number" name="mileage" min="0" onchange="validateForm()">
+                                            
+                                            </div>
+                                            <div class="small-3 columns">
+                                                <span class="form-sublabel">KMS</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="small-12 columns">
+                                            <div id="buttonValidation" class="gray-button go-button">
+                                                <button type="submit" id="submitReservation">Go!</button>
+                                            </div>
+                                        </div>   
+                                    </div>
+                                    <div class="buttonTextHint"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+    <!-- END TOGGLE RESERVATIONS PANEL -->
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- START FEATURED TYPES OF TRUCKS -->
 
@@ -510,7 +675,7 @@
                                 <div class="medium-6 columns">
                                     <img src="images/black-click-icon.png" alt="Call us">
                                     <p>Reserve a Vehicle Online</p>
-                                    <a href="#" class="black-button text-center">Find Your Vehicle</a>
+                                    <a href="trucks-personal.html" class="black-button text-center">Find Your Vehicle</a>
                                 </div>
                             </div>
                         </div>
@@ -584,7 +749,10 @@
 
             <script src="bower_components/foundation-sites/js/foundation.equalizer.js"></script>
             <script src="bower_components/foundation-sites/js/foundation.offcanvas.js"></script>
-            <script src="node_modules/foundation-datepicker/js/foundation-datepicker.js"></script>
+            <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+            <!-- <script src="node_modules/foundation-datepicker/js/foundation-datepicker.js"></script> -->
             <script src="js/app.js"></script>
             <script src="js/reservations.js"></script>
 

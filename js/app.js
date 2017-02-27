@@ -2,6 +2,7 @@
 
 $(document).foundation();
 
+
 //smooth scroll
 // $('a[href^="#"]').on('click',function (e) {
 //         e.preventDefault();
@@ -16,6 +17,12 @@ $(document).foundation();
 
 
 $(document).ready(function() {
+
+    setTimeout(function() {
+        $('body').removeClass('no-fouc');
+    }, 300);
+
+
     $( '#mainNav ul li' ).hover(
         function(){
             $(this).children('.submenu').slideDown(150);

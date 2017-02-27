@@ -157,6 +157,7 @@ $( "#dropOffDate" ).datepicker({
 });
 
 $('form').submit(function(e){
+    console.log('submit');
     e.preventDefault();
 
     console.log('in the submit');
@@ -172,6 +173,7 @@ $('form').submit(function(e){
         estimatedKMS : estimatedKMS
     };
     console.log(formdata);
+    window.location.href='/search-results.html';
     // $.ajax({
     //     type: 'POST',
     //     url: '#',

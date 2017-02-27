@@ -116,6 +116,19 @@ $dropdownmenu-arrow-color: $brandRed !important;
 
 
 // GLOBAL ---------------------------------------------------------------
+body.no-fouc:before {
+	position: absolute;
+	display: block;
+	content: '...Loading';
+	width: 100%;
+	min-height: 100vh;
+	z-index: 200;
+	background: $brandBlack;
+	color: $brandWhite;
+	text-align: center;
+	padding-top: 30vh;
+	font-size: 2rem;
+}
 
 .red {
 	color: $brandRed;
@@ -157,7 +170,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 	border: 2px solid $brandRed;
 	background-color: rgba(239,62,66,0.7);
 	border-radius: 10px 0;
-	padding: 5px 0;
+	// padding: 5px 0;
 	-webkit-transform: scale(1.0); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
     -ms-transform: scale(1.0); /* IE 9 */
 	transform: scale(1.0);
@@ -369,8 +382,9 @@ $dropdownmenu-arrow-color: $brandRed !important;
 	border-width: 19px;
 	margin-top: -19px;
 }
-
-
+.active-page {
+	color: $brandRed !important;
+}
 
 
 .row .row {
@@ -825,8 +839,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 }
 
 .imageBG {
-	// background: url(../images/locally-owned.png) top right no-repeat;
-	background: url(../images/locally-owned-2.jpg) top right no-repeat;
+	background: url(../images/locally-owned-bg.jpg) top right no-repeat;
 	background-size: auto 100%;
 }
 
@@ -1226,12 +1239,12 @@ $dropdownmenu-arrow-color: $brandRed !important;
 
 
 }
-.commercialCargoVans, .commercialTruckSizes, .commercialPickups, .commercialRamps {
+.commercialCargoVans, .commercialTruckSizes, .commercialPickups, .commercialRamps, .powerLifts {
 	height: 200px;
 	background-color: $brandRed;
 	position: relative;
 	background-size: contain;
-	width: 24%;
+	width: 19%;
 	margin: 0 0.5% 30px;
 
 
@@ -1264,7 +1277,11 @@ $dropdownmenu-arrow-color: $brandRed !important;
 	background-size: cover;
 }
 .commercialRamps {
-	background: url(../images/471909169.jpg) center center no-repeat;
+	background: url(../images/ramps.jpg) center center no-repeat;
+	background-size: cover;
+}
+.powerLifts {
+	background: url(../images/power-lifts.jpg) center center no-repeat;
 	background-size: cover;
 }
 .grey-bg-panel {
@@ -1321,6 +1338,10 @@ $dropdownmenu-arrow-color: $brandRed !important;
 // TRUCKS PERSONAL PAGE ---------------------------------------------------
 // ------------------------------------------------------------------------
 // ------------------------------------------------------------------------
+
+.sidebarReservations button.ui-datepicker-trigger {
+	display: none;
+}
 
 #trucksPersonalHeader {
 	background: url(../images/personal-trucks-bg.jpg)center left no-repeat;
@@ -1399,7 +1420,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 		}
 	}
 
-	.gray-button, .red-button {
+	.gray-button, .red-button, .go-button-green {
 		margin-top: 20px;
 	}
 	button {
@@ -1474,7 +1495,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 
 		}
 	}
-	.gray-button, .red-button {
+	.gray-button, .red-button, .green-button-go {
 		margin-top: 20px;
 	}
 	button {
@@ -1683,7 +1704,8 @@ $dropdownmenu-arrow-color: $brandRed !important;
 // ------------------------------------------------------------------------
 // ------------------------------------------------------------------------
 #locationsHeader {
-	background: url(../images/locations-bg.jpg)center left no-repeat;
+	// background: url(../images/locations-bg.jpg)center left no-repeat;
+	background: url(../images/jamieson-about-header-bg.jpg)center left no-repeat;
 	color: $brandWhite;
 	padding: 70px 0;
 	h2 {
@@ -1807,7 +1829,7 @@ $dropdownmenu-arrow-color: $brandRed !important;
 // ------------------------------------------------------------------------
 
 #searchResultsHeader {
-	background: url(../images/search-results-header.jpg) center top no-repeat;
+	background: url(../images/search-results-header-2.jpg) center top no-repeat;
 	padding: 70px 0;
 	h2 {
 		@include bebasHeader(center);
@@ -2172,6 +2194,11 @@ $dropdownmenu-arrow-color: $brandRed !important;
 	.row {
 		max-width: 90%;
 		margin: 0 auto;
+	}
+	.black-button {
+		width: 95%;
+		margin: 0 auto;
+		padding: 10px 30px;
 	}
 }
 
