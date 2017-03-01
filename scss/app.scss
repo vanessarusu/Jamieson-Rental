@@ -1955,7 +1955,7 @@ body.no-fouc:before {
 		.promotion {
 			color: $brandWhite;
 			padding: 0.2rem 0.8rem;
-			background-color: orange;
+			background-color: $brandLightBlack;
 			font-weight: bold;
 		}
 		.priceBreakdown {
@@ -2109,6 +2109,12 @@ body.no-fouc:before {
 
 .search {
 	margin: 2rem auto;
+	button {
+		font-size: 2rem;
+		line-height: 2rem;
+		color: $brandLightBlack;
+		text-align: left;
+	}
 }
 .sub-articles {
 	margin-bottom: 2rem;
@@ -2199,6 +2205,27 @@ body.no-fouc:before {
 		width: 95%;
 		margin: 0 auto;
 		padding: 10px 30px;
+	}
+}
+
+#blogPostBody {
+	border-bottom: 1px solid $brandLightBlack;
+	p, li {
+		font-size: 1rem;
+	}
+	
+	h3 {
+		font-size: 1.5rem;
+		margin-top: 1rem;
+		color: $brandRed;
+	}
+	.categoryListing {
+		h4 {
+			color: $brandBlack;
+			font-weight: bold;
+			font-size: 1.4rem;
+			margin-bottom: 0;
+		}
 	}
 }
 
