@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="css/app.css">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="node_modules/foundation-datepicker/css/foundation-datepicker.css">
+        <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet"> -->
 
         <link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon'/>
 
@@ -47,9 +49,9 @@
                         </li>
                         <li><a href="#">Car Sales</a></li>
                         <li><a href="promotions.html">Promotions</a></li>
-                        <li><a class="active-page" href="helpful-tips.html">Helpful Tips</a></li>
+                        <li><a href="helpful-tips.html">Helpful Tips</a></li>
                         <li>
-                            <a href="#">About Us</a>
+                            <a href="#" class="active-page">About Us</a>
                             <ul class="vertical menu">
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="contact.html">Contact</a></li>
@@ -129,9 +131,9 @@
                                             </li>
                                             <li><a href="#">Car Sales</a></li>
                                             <li><a href="promotions.html">Promotions</a></li>
-                                            <li><a href="helpful-tips.html" class="active-page">Helpful Tips</a></li>
+                                            <li><a href="helpful-tips.html">Helpful Tips</a></li>
                                             <li>
-                                                <a href="#">About Us</a>
+                                                <a href="#" class="active-page">About Us</a>
                                                 <ul class="dropDown">
                                                     <li><a href="about.html">About Us</a></li>
                                                     <li><a href="contact.html">Contact</a></li>
@@ -149,63 +151,49 @@
 
     <!-- END HEADER -->
 
-    <!-- START ABOUT US HERO PANEL -->
-
-                <section id="helpfulTipsHeader">
+                <section id="contact" class="gray-bg">
                     <div class="row">
-                        <div class="small-10 small-offset-1 columns end animated fadeIn">
-                            <div class="animated fadeIn">
-                                <h2>Corporate Truck Rental Post Listing</h2>
-                            </div>
+                        <div class="text-center">
+                            <h2>Contact Us</h2>
+                        <p>Lorem ipsum dolor sit amet</p>
                         </div>
+                        <form method="POST" action="action-page.php">
+                            <div class="medium-10 columns medium-offset-1">
+                                <div class="medium-6 columns">
+                                    <label>First Name
+                                        <input type="text" name="fname" placeholder="First Name" required>
+                                    </label>
+                                </div>
+                                <div class="medium-6 columns">
+                                    <label>Last Name
+                                        <input type="text" name="lname" placeholder="Last Name">
+                                    </label>
+                                </div>
+                                <div class="medium-6 columns">
+                                    <label>Phone Number
+                                        <input type="tel" name="phone" placeholder="Your Number">
+                                    </label>
+                                </div>
+                                <div class="medium-6 columns">
+                                    <label>Email
+                                        <input type="email" name="email" placeholder="Your Email" required>
+                                    </label>
+                                </div>
+                                <div class="medium-12 columns">
+                                    <label>Comments:
+                                        <textarea name="comments" rows="6" placeholder="Your comments"></textarea>
+                                    </label>
+                                </div>
+                                <div class="text-center">
+                                    <input type="submit" class="button red-button" value="Submit">
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </section>
-
-
-    <!-- END ABOUT US HERO PANEL -->
-
-    <!-- START LOCALLY OWNED PANEL -->
-
-                <section id="blogPostBody" class="row light-content">
-                    <div class="small-10 small-offset-1 columns">
-                        <ul class="categoryListing">
-                            <li>
-                                <a href="#">
-                                    <h4>Title of article</h4>
-                                    <p>excerpt of article</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <h4>Title of article</h4>
-                                    <p>excerpt of article</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <h4>Title of article</h4>
-                                    <p>excerpt of article</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <h4>Title of article</h4>
-                                    <p>excerpt of article</p>
-                                </a>
-                            </li>
-                            
-                        </ul>
-
-                    </div>
-                    
-
-                </section>
-
-
-    <!-- END LOCALLY OWNED PANEL -->
-
-   
     
+
+
         
 
     <!-- START FOOTER -->
@@ -275,8 +263,11 @@
 
             <script src="bower_components/foundation-sites/js/foundation.equalizer.js"></script>
             <script src="bower_components/foundation-sites/js/foundation.offcanvas.js"></script>
+            
             <script src="js/app.js"></script>
+            <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
+            <script src="js/reservations.js"></script>
         </body>
 </html>

@@ -2379,6 +2379,33 @@ body.no-fouc:before {
 	}
 }
 
+// RESERVATIONS PAGE -----------------------------------------------------------
+// ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
+
+#contact {
+	padding: 50px 0;
+	h2 {
+		@include bebasHeader(center);
+		color: $brandBlack;
+	}
+	form {
+		margin-top: 2rem;
+	}
+	label {
+		font-size: 1.1rem;
+		font-weight: bold;
+	}
+	input, textarea {
+		font-weight: normal;
+	}
+	.button {
+		padding: 1rem 5rem;
+		font-weight: bold;
+	}
+}
+
+
 
 
 // MEDIA QUERIES  ---------------------------------------------------------
