@@ -2379,7 +2379,7 @@ body.no-fouc:before {
 	}
 }
 
-// RESERVATIONS PAGE -----------------------------------------------------------
+// CONTACT PAGE -----------------------------------------------------------
 // ------------------------------------------------------------------------
 // ------------------------------------------------------------------------
 
@@ -2406,6 +2406,63 @@ body.no-fouc:before {
 }
 
 
+// CONFIRMATION PAGE ------------------------------------------------------
+// ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
+
+#printableConfirmation {
+	.print-logo {
+		display: none;
+		// max-width: 200px;
+		// padding: 20px 0;
+	}
+	padding: 20px 0 50px;
+	h3, h4 {
+		color: $brandRed;
+		font-weight: bold;
+	}
+	h4 {
+		font-size: 1.2rem;
+	}
+	p span {
+		font-weight: bold;
+	}
+	.red-button {
+		font-weight: bold;
+		margin-right: 1rem;
+	}
+}
+@media print {
+	@page {
+		margin: 0.5cm;
+	}
+	.print-logo {
+		display: block;
+		max-width: 200px;
+		padding: 20px 0;
+	}
+	body {
+		font-size: 14px;
+		.red-button {
+			display: none;
+		}
+	}
+	padding: 200px 0 50px;
+	h3, h4 {
+		font-weight: bold;
+	}
+	h4 {
+		font-size: 1.2rem;
+	}
+	p span {
+		font-weight: bold;
+	}
+	.red-button {
+		font-weight: bold;
+		margin-right: 1rem;
+	}
+
+}
 
 
 // MEDIA QUERIES  ---------------------------------------------------------
@@ -2526,7 +2583,7 @@ body.no-fouc:before {
 			max-width: 100%;
 		}
 	}
-	.commercialCargoVans, .commercialTruckSizes, .commercialPickups, .commercialRamps {
+	.commercialCargoVans, .commercialTruckSizes, .commercialPickups, .commercialRamps, .powerLifts {
  		width: 100%;
  		margin: 0.5% 0;
 	}
@@ -2810,7 +2867,7 @@ body.no-fouc:before {
 		max-width: 80%;
 		margin: 0 auto;
 	}
-	.commercialCargoVans, .commercialTruckSizes, .commercialPickups, .commercialRamps {
+	.commercialCargoVans, .commercialTruckSizes, .commercialPickups, .commercialRamps, .powerLifts {
  		width: 49%;
  		margin: 0.5%;
 	}

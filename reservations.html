@@ -278,11 +278,12 @@ NOTE: restrictions and or surcharges apply to cross border travel.</p>
 
     <!-- START FOOTER -->
 
-
-
             <footer id="footer">
                 <div class="row">
-                    <div class="medium-6 large-5 large-offset-1 columns">
+
+<!-- TWO LOCATIONS - COMMENT OUT IF BECOMING THREE -->
+
+                    <div class="medium-5 medium-offset-1 columns">
                         <div class="small-2 columns text-right">
                             <i class="fa fa-map-marker" aria-hidden="true"></i>
                         </div>
@@ -291,6 +292,8 @@ NOTE: restrictions and or surcharges apply to cross border travel.</p>
                             <p>64 Walton Ave, Kitchener, ON N2C 2B5</p>
                         </div>
                     </div>
+
+
                     <div class="medium-6 columns">
                         <div class="small-2 columns text-right">
                             <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -300,6 +303,41 @@ NOTE: restrictions and or surcharges apply to cross border travel.</p>
                             <p>65 Ingersoll Rd, Woodstock, ON N4S 2R1</p>
                         </div>
                     </div>
+
+<!-- FOR THREE LOCATIONS UNCOMMENT THIS BLOCK -->
+
+                    <!-- <div class="large-4 columns">
+                        <div class="small-2 columns text-right">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="small-10 columns">
+                            <h4>Kitchener (519) 578-0760</h4>
+                            <p>64 Walton Ave, Kitchener, ON N2C 2B5</p>
+                        </div>
+                    </div>
+
+
+                    <div class="large-4 columns">
+                        <div class="small-2 columns text-right">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="small-10 columns">
+                            <h4>Woodstock (519) 539-5609</h4>
+                            <p>65 Ingersoll Rd, Woodstock, ON N4S 2R1</p>
+                        </div>
+                    </div>
+                    <div class="large-4 columns">
+                        <div class="small-2 columns text-right">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="small-10 columns">
+                            <h4>Woodstock (519) 539-5609</h4>
+                            <p>65 Ingersoll Rd, Woodstock, ON N4S 2R1</p>
+                        </div>
+                    </div> -->
+
+<!-- END THREE LOCATIONS -->
+
                     <ul class="large-12 columns menu">
                         <li>
                             <a href="#">Truck Rentals</a>
@@ -318,11 +356,10 @@ NOTE: restrictions and or surcharges apply to cross border travel.</p>
                         </li>
                         <li><a href="#">Car Sales</a></li>
                         <li><a href="promotions.html">Promotions</a></li>
-                        <li><a href="helpful-tips.html">Helpful Tips</a></li>
+                        <li><a href="#">Helpful Tips</a></li>
                         <li>
                             <a href="#">About Us</a>
                             <ul>
-                                <li><a href="about.html">About Us</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                                 <li><a href="locations.html">Locations</a></li>
                             </ul>
@@ -344,52 +381,6 @@ NOTE: restrictions and or surcharges apply to cross border travel.</p>
             <script src="bower_components/foundation-sites/js/foundation.equalizer.js"></script>
             <script src="bower_components/foundation-sites/js/foundation.offcanvas.js"></script>
             
-            <script src="bower_components/jqcloud2/dist/jqcloud.min.js"></script>
             <script src="js/app.js"></script>
-
-
-            <script type="text/javascript">
-
-                var words = [
-                    {
-                        text: 'Load Safety',
-                        weight: 1,
-                        link: '#'
-                    },
-                    {
-                        text: 'Road Safety',
-                        weight: 6,
-                        link: '#'
-                    },
-                    {
-                        text: 'Car Safety',
-                        weight: 2,
-                        link: '#'
-                    },
-                    {
-                        text: 'Truck Rentals',
-                        weight: 4,
-                        link: '#'
-                    },
-                    {
-                        text: 'Keyword 1',
-                        weight: 9,
-                        link: '#'
-                    }
-                ];
-                $('#keywords').css({
-                    'width': '90%',
-                    'margin': '0 auto'
-                });
-                $('#keywords').jQCloud(words, {
-                    height: 200,
-                    autoResize: true,
-                    removeOverflowing: false,
-                    fontSize: ['8px','10px', '12px', '14px', '16px', '18px', '20px', '22px', '24px', '26px']
-                });
-                
-            </script>
-
-
         </body>
 </html>

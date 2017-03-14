@@ -23,8 +23,6 @@ var pickupTime = document.querySelector('#pickupTime').value;
 var dropOffTime = document.querySelector('#dropOffTime').value;
 
 
-
-
 // if(estimatedKMS) {
 //     estimatedKMS.value = '';
 // }
@@ -33,8 +31,6 @@ var selectedVehicle = document.querySelector('input[name="vehicle"]:checked').va
 var dateTextHint = document.querySelector('.dateTextHint');
 pickupLocation = document.querySelector('select[name="location"]').value;
 // var buttonTextHint = document.querySelector('.buttonTextHint');
-
-
 
 
 
@@ -82,10 +78,6 @@ function validateForm() {
 
         // if the renter is choosing a truck, make sure estimated kms is filled out
         if (selectedVehicle == 'truck-option') {
-            // var estimatedKMS = document.querySelector('#estimatedKMS').value;
-            console.log('in the selected truck option');
-            console.log(selectedPickUp);
-            console.log(estimatedKMS.value);
             if(selectedPickUp != false && (estimatedKMS.value !=false || estimatedKMS.value != 0 || estimatedKMS.value !='') && estimatedKMS.value > -1) {
                 formIsValid();
             }
@@ -157,10 +149,9 @@ $( "#dropOffDate" ).datepicker({
 });
 
 $('form').submit(function(e){
-    console.log('submit');
     e.preventDefault();
 
-    console.log('in the submit');
+    // console.log('in the submit');
     var formdata = {
         vehicle : selectedVehicle,
         pickupLocation : pickupLocation,
@@ -172,17 +163,6 @@ $('form').submit(function(e){
         dropOffTime : dropOffTime,
         estimatedKMS : estimatedKMS
     };
-    console.log(formdata);
     window.location.href='/search-results.html';
-    // $.ajax({
-    //     type: 'POST',
-    //     url: '#',
-    //     data: formdata,
-    //     dataType: json,
-    //     encode: true
-    // })
-    // .done(function(data){
-    //     console.log(data);
-    // });
-    // e.preventDefault();
+
 });

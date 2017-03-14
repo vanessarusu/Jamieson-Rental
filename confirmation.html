@@ -47,7 +47,7 @@
                         </li>
                         <li><a href="#">Car Sales</a></li>
                         <li><a href="promotions.html">Promotions</a></li>
-                        <li><a class="active-page" href="helpful-tips.html">Helpful Tips</a></li>
+                        <li><a href="helpful-tips.html">Helpful Tips</a></li>
                         <li>
                             <a href="#">About Us</a>
                             <ul class="vertical menu">
@@ -129,7 +129,7 @@
                                             </li>
                                             <li><a href="#">Car Sales</a></li>
                                             <li><a href="promotions.html">Promotions</a></li>
-                                            <li><a href="helpful-tips.html" class="active-page">Helpful Tips</a></li>
+                                            <li><a href="helpful-tips.html">Helpful Tips</a></li>
                                             <li>
                                                 <a href="#">About Us</a>
                                                 <ul class="dropDown">
@@ -155,7 +155,7 @@
                     <div class="row">
                         <div class="small-10 small-offset-1 columns end animated fadeIn">
                             <div class="animated fadeIn">
-                                <h2>Corporate Truck Rental Post Listing</h2>
+                                <h2>Thank you for your reservation!</h2>
                             </div>
                         </div>
                     </div>
@@ -166,36 +166,71 @@
 
     <!-- START LOCALLY OWNED PANEL -->
 
-                <section id="blogPostBody" class="row light-content">
+                <section id="printableConfirmation" class="row gray-bg">
+                    <div class="row text-right">
+                        <div class="small-12 columns text-right">
+                            <a href="#" class="button red-button" onclick="printDiv('printableConfirmation')">Print Confirmation</a>
+                        </div>
+                    </div>
                     <div class="small-10 small-offset-1 columns">
-                        <ul class="categoryListing">
-                            <li>
-                                <a href="#">
-                                    <h4>Title of article</h4>
-                                    <p>excerpt of article</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <h4>Title of article</h4>
-                                    <p>excerpt of article</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <h4>Title of article</h4>
-                                    <p>excerpt of article</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <h4>Title of article</h4>
-                                    <p>excerpt of article</p>
-                                </a>
-                            </li>
-                            
-                        </ul>
+                        <div class="print-logo">
+                            <img src="images/jamieson-logo.png">    
+                        </div>                  
+                        <h3>Reservation Summary</h3>
+                        <h4>Location</h4>
+                        <p>
+                            <span>Kitchener Jamieson Rentals</span>
+                            <br>
+                            64 Walton Ave, Kitchener, ON N2C 2B5
+                            <br>
+                            <span>Phone: </span>(519) 578-0760
+                            <br>
+                            <span>Hours of Business: </span>test
+                        </p>
+                        <h4>Dates and Times Pickup</h4>
+                        <p>
+                            <span>Pickup: </span>March 20, 2017 - 7:00am
+                            <br>
+                            <span>Return: </span>March 22, 2017 - 7:00am
+                            <br>
+                            <span>Rate Conditions: </span> 24 hour rental
+                        </p>
+                        <h4>Rate Details (estimate)</h4>
+                        <p>
+                            <span>Rental Charge (2): </span>$39.98
+                            <br>
+                            <span>Coverage Options </span>$44.98
+                            <br>
+                            <span>Taxes and Fees: </span>$18.64
+                            <br>
+                            <span>Total: $103.60</span>
+                            <br>
+                            <span>Vehicle Type: </span>Small Car, $19.99/day
+                        </p>
+                        <h4>Rental Details</h4>
+                        <p>
+                            <span>Name: </span>Shawn Cudney
+                            <br>
+                            <span>Phone: </span>(519) 123-4567
+                            <br>
+                            <span>Email: </span>scudney@infrasphere.com
+                        </p>
+                    </div>
+                    
+                    <div class="small-10 small-offset-1 columns end">
+                        <h3>Other Terms and Conditions</h3>
+                        <p>
+                            <span>Drivers Age: </span>23 years and older. A $5.00/day surcharge will apply to drivers 23-25 years.
+                            <br>
 
+                            <span>Credit Cards Accepted: </span>Mastercard, Visa, American Express. NOTE: restrictions and or surcharges apply to cross border travel.
+                        <br>
+                            <span>Licenses Accepted: </span>Full G Ontario Liscence required. We also accept international licenses.
+                        <br>
+                            <span>Cancellation Policy: </span>Reservations cancelled within 72 hours of the rental will be charged a $100.00 cancellation fee.
+                        <br>
+                            <span>Other: </span>Other terms and conditions.
+                        </p>
                     </div>
                     
 
@@ -313,7 +348,18 @@
             <script src="bower_components/foundation-sites/js/foundation.equalizer.js"></script>
             <script src="bower_components/foundation-sites/js/foundation.offcanvas.js"></script>
             <script src="js/app.js"></script>
+            <script type="text/javascript">
+                function printDiv(divName) {
+                     var printContents = document.getElementById(divName).innerHTML;
+                     var originalContents = document.body.innerHTML;
 
+                     document.body.innerHTML = printContents;
+
+                     window.print();
+
+                     document.body.innerHTML = originalContents;
+                }
+            </script>
 
         </body>
 </html>
