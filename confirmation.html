@@ -166,10 +166,10 @@
 
     <!-- START LOCALLY OWNED PANEL -->
 
-                <section id="printableConfirmation" class="row gray-bg">
+                <section id="printableConfirmation" class="row">
                     <div class="row text-right">
                         <div class="small-12 columns text-right">
-                            <a href="#" class="button red-button" onclick="printDiv('printableConfirmation')">Print Confirmation</a>
+                            <a href="#" id="printButton" class="button red-button">Print Confirmation</a>
                         </div>
                     </div>
                     <div class="small-10 small-offset-1 columns">
@@ -245,7 +245,7 @@
 
     <!-- START FOOTER -->
 
-            <footer id="footer">
+            <footer id="footer" class="gray-bg">
                 <div class="row">
 
 <!-- TWO LOCATIONS - COMMENT OUT IF BECOMING THREE -->
@@ -348,18 +348,7 @@
             <script src="bower_components/foundation-sites/js/foundation.equalizer.js"></script>
             <script src="bower_components/foundation-sites/js/foundation.offcanvas.js"></script>
             <script src="js/app.js"></script>
-            <script type="text/javascript">
-                function printDiv(divName) {
-                     var printContents = document.getElementById(divName).innerHTML;
-                     var originalContents = document.body.innerHTML;
-
-                     document.body.innerHTML = printContents;
-
-                     window.print();
-
-                     document.body.innerHTML = originalContents;
-                }
-            </script>
+            <script src="js/print.js"></script>
 
         </body>
 </html>

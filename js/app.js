@@ -4,16 +4,16 @@ $(document).foundation();
 
 
 // smooth scroll
-$('a[href^="#"]').on('click',function (e) {
-        e.preventDefault();
+// $('a[href^="#"]').on('click',function (e) {
+//         e.preventDefault();
 
-        var target = this.hash;
-        var $target = $(target);
+//         var target = this.hash;
+//         var $target = $(target);
 
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top
-        }, 500, 'swing');
-    });
+//         $('html, body').stop().animate({
+//             'scrollTop': $target.offset().top
+//         }, 500, 'swing');
+//     });
 
 
 $(document).ready(function() {
@@ -41,14 +41,6 @@ function removeMobileAnimations(){
         }
     }
 }
-// function to print the confirmation
-function printDiv(divName) {
-        var printContents = document.getElementById(divName).innerHTML;
-        var originalContents = document.body.innerHTML;
-        document.body.innerHTML = printContents;
-        window.print();
-        document.body.innerHTML = originalContents;
-    }
 // check if mobile, remove animations if true
 if(window.innerWidth <= 639) {
         removeMobileAnimations();
@@ -59,3 +51,4 @@ if(window.innerWidth <= 639) {
 $('#truckFleetList li a').on('click', function(){
     $(':focus').blur();
 });
+
