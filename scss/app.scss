@@ -780,6 +780,7 @@ body.no-fouc:before {
 	border: 2px solid #0A7621;
 	border-radius: 10px 0;
 	background-color: #5EBE53;
+	padding: 5px 0;
 }
 
 #qualityVehicles {
@@ -1167,11 +1168,6 @@ body.no-fouc:before {
 		// font-family: $bebas-bold;
 		// color: $brandWhite;
 		@include bebasHeader(left);
-		// font-size: 58px;
-		// line-height: 58px;
-		// padding: 10px 0;
-		// -webkit-animation-delay: 0.2s;
-		// animation-delay: 0.2s;
 	}
 	h3 {
 		padding-top: 60px;
@@ -1198,19 +1194,6 @@ body.no-fouc:before {
 	}
 	li {
 		@include checkmarkList(16px,20px);
-		// list-style: none;
-		// font-weight: bold;
-		// font-size: 16px;
-		// line-height: 20px;
-		// margin-bottom: 5px;
-		// position: relative;
-		// &:before {
-		// 	font-family: 'FontAwesome';
-		// 	content: '\f058';
-		// 	margin:0 10px 0 -20px;
-		// 	color: $brandRed;
-		// 	font-size: 14px;
-		// }
 	}
 
 }
@@ -1350,12 +1333,6 @@ body.no-fouc:before {
 	h2 {
 		color: $brandBlack;
 		@include bebasHeader(center);
-		// font-family: $bebas-bold;
-		// font-size: 58px;
-		// line-height: 58px;
-		// padding: 10px 0;
-		// animation-delay: 0.2s;
-		// text-align: center;
 
 	}
 
@@ -1363,11 +1340,6 @@ body.no-fouc:before {
 		// font-family: $bebas-bold;
 		color: $brandWhite;
 		@include bebasHeader(left);
-		// font-size: 58px;
-		// line-height: 58px;
-		// padding: 10px 0;
-		// -webkit-animation-delay: 0.2s;
-		// animation-delay: 0.2s;
 	}
 
 	h3 {
@@ -1395,20 +1367,6 @@ body.no-fouc:before {
 	li {
 		@include checkmarkList (16px,20px);
 		color: $brandWhite;
-		// list-style: none;
-		// font-weight: bold;
-		// font-size: 16px;
-		// line-height: 20px;
-		// margin-bottom: 5px;
-		// position: relative;
-		// color: $brandWhite;
-		// &:before {
-		// 	font-family: 'FontAwesome';
-		// 	content: '\f058';
-		// 	margin:0 10px 0 -20px;
-		// 	color: $brandRed;
-		// 	font-size: 14px;
-		// }
 	}
 	form {
 		animation-delay: 0.4s;
@@ -1428,6 +1386,7 @@ body.no-fouc:before {
 		font-weight: bold;
 		padding: 15px 0;
 		font-size: 24px;
+		width: 100%;
 	}
 	#buttonValidation {
 		animation-delay: 0.2s;
@@ -1464,23 +1423,12 @@ body.no-fouc:before {
 	color: $brandWhite;
 	h2 {
 		@include bebasHeader(center);
-		// font-family: $bebas-bold;
-		// font-size: 58px;
-		// line-height: 58px;
-		// padding: 10px 0;
-		// animation-delay: 0.2s;
-		// text-align: center;
 	}
 
 	h3 {
 		// font-family: $bebas-bold;
 		@include bebasHeader(left);
 		color: #fff;
-		// font-size: 58px;
-		// line-height: 58px;
-		// padding: 10px 0;
-		// -webkit-animation-delay: 0.2s;
-		// animation-delay: 0.2s;
 	}
 	h3 {
 		padding-top: 60px;
@@ -1495,7 +1443,7 @@ body.no-fouc:before {
 
 		}
 	}
-	.gray-button, .red-button, .green-button-go {
+	.red-button, .green-button-go {
 		margin-top: 20px;
 	}
 	button {
@@ -1503,26 +1451,14 @@ body.no-fouc:before {
 		font-weight: bold;
 		padding: 15px 0;
 		font-size: 24px;
+		width: 100%;
+		margin-top: 20px;
 	}
 	#buttonValidation {
 		animation-delay: 0.2s;
 	}
 	li {
 		@include checkmarkList(16px,20px);
-		// list-style: none;
-		// font-weight: bold;
-		// font-size: 16px;
-		// line-height: 20px;
-		// margin-bottom: 5px;
-		// position: relative;
-		// color: $brandWhite;
-		// &:before {
-		// 	font-family: 'FontAwesome';
-		// 	content: '\f058';
-		// 	margin:0 10px 0 -20px;
-		// 	color: $brandRed;
-		// 	font-size: 14px;
-		// }
 	}
 }
 
@@ -1877,7 +1813,7 @@ body.no-fouc:before {
 		}
 		p {
 			font-size: 1rem;
-			font-weight: bold;
+			// font-weight: bold;
 			margin-bottom: 0.5rem;
 		}
 		p.form-sublabel {
@@ -1971,6 +1907,13 @@ body.no-fouc:before {
 					font-weight: bold;
 					// margin-left: 10px;
 				}
+			}
+			input {
+				margin: 0;
+				padding: 0;
+				border: none;
+				background: transparent;
+				line-height: 1rem;
 			}
 			.red {
 				font-family: $open-sans;

@@ -187,6 +187,7 @@
                         e.preventDefault();
                         $('#reserve').slideToggle();
                         this.blur();
+                        Foundation.reInit('equalizer');
                     });
                 </script>
 
@@ -195,10 +196,10 @@
 
 
     <section id="reserve" class="gray-bg" style="display:none;">
-                <div class="row">
+                <div class="row" data-equalizer data-equalize-on-stack="false">
                     <h3 class="small-10 small-offset-1 red title text-center">Price &amp; Reserve Your Vehicle Online</h3>
                     <form id="reserveForm" action="action_page.php" method="POST">
-                        <div class="large-2 columns arrow_box">
+                        <div class="large-2 columns arrow_box" data-equalizer-watch>
                             <div class="row">
                                 <div class="small-10 small-offset-1 large-11 large-offset-0 columns">
                                     <p class="reserve-title">Vehicle</p>
@@ -221,7 +222,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="large-3 columns arrow_box">
+                        <div class="large-3 columns arrow_box" data-equalizer-watch>
                             <div class="row">
                                 <div class="small-10 small-offset-1 columns">
                                     <p class="reserve-title">Location</p>
@@ -232,7 +233,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="large-4 columns arrow_box">
+                        <div class="large-4 columns arrow_box" data-equalizer-watch>
                             <div class="row">
                                 <div class="small-10 small-offset-1 columns">
                                     <p class="reserve-title">Dates &amp; Times</p>
@@ -290,7 +291,7 @@
                             </div>
                         </div>
                         
-                        <div class="large-3 columns">
+                        <div class="large-3 columns" data-equalizer-watch>
                             <div class="row">
                                 <div class="small-10 small-offset-1 columns">
                                     <div id="KMS">
@@ -308,8 +309,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="small-12 columns">
-                                            <div id="buttonValidation" class="gray-button go-button">
-                                                <button type="submit" id="submitReservation">Go!</button>
+                                            <div id="buttonValidation">
+                                                <button type="submit" id="submitReservation" class="gray-button go-button">Go!</button>
                                             </div>
                                         </div>   
                                     </div>

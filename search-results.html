@@ -192,7 +192,7 @@
                         <h2>Your Itinerary</h2>
                         <!-- <a href="#" class="button red-button">Modify</a> -->
                     </div>
-                <div class="row">
+                <div class="row" data-equalizer data-equalize-on-stack="false">
                     <form id="reserveForm" action="action_page.php" method="get">
                         <div class="large-2 columns arrow_box" data-equalizer-watch>
                             <div class="row">
@@ -305,8 +305,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="small-12 columns">
-                                            <div id="buttonValidation" class="gray-button go-button">
-                                                <button type="submit" id="submitReservation">Update</button>
+                                            <div id="buttonValidation">
+                                                <button type="submit" id="submitReservation" class="gray-button go-button">Update</button>
                                             </div>
                                         </div>   
                                     </div>
@@ -370,7 +370,7 @@
                                                     <a data-open="exampleModal1">View Breakdown</a>
                                                 </p>
                                                 <div class="large-6 columns"><a href="#" class="fleet-button icon-phone button">1-800-123-4567</a></div>
-                                                <div class="large-6 columns"><a href="#" class="green-button icon-pointer button">Reserve Online</a></div>
+                                                <div class="large-6 columns"><div class="green-button icon-pointer button"><input type="submit" value="Reserve Online" method="POST" action="test.php"></input></div></div>
                                             </div>
 
                                             <!-- POPUL MODAL -->

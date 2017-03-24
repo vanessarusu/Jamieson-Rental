@@ -13,7 +13,7 @@ var location;
 var submitReservation = document.querySelector('#submitReservation');
 submitReservation.disabled = true;
 
-var buttonValidation = document.querySelector("#buttonValidation");
+var buttonValidation = document.querySelector("#buttonValidation button");
 var KMS = document.querySelector('#KMS');
 var estimatedKMS = document.querySelector('#estimatedKMS');
 
