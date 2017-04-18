@@ -2273,14 +2273,14 @@ body.no-fouc:before {
 		font-weight: bold;
 		ul {
 		
-			li {
-				// margin-left: 1rem;
-				&:before {
-					font-family: 'FontAwesome';
-					content: '\f00c';
-					margin-right: 0.3rem;
-				}
-			}
+			// li {
+			// 	// margin-left: 1rem;
+			// 	&:before {
+			// 		font-family: 'FontAwesome';
+			// 		content: '\f00c';
+			// 		margin-right: 0.3rem;
+			// 	}
+			// }
 		}
 	}
 }
