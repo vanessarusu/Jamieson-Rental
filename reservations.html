@@ -208,12 +208,12 @@
                                         <form action="#" method="POST">
                                             <ul>
                                                 <li>
-                                                    <input type="checkbox" name="offers" value="Unlimited">
-                                                    Unlimited Kilometers
+                                                    <input type="checkbox" name="offers" value="Unlimited" id="unlimited">
+                                                    <label class="green" for="unlimited">Unlimited Kilometers</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" name="offers" value="FreePickup">
-                                                        Free Pickup
+                                                    <input type="checkbox" name="offers" value="FreePickup" id="freePickup">
+                                                    <label class="green" for="freePickup">Free Pickup</label>
                                                 </li>
                                             </ul>
                                         </form>
@@ -234,18 +234,18 @@
     <section id="rentalDetails" class="row" data-equalizer data-equalize-on="medium">
         <div class="medium-8 large-7 columns" data-equalizer-watch>
         <h2>Rental Details</h2>
-            <form class="row">
+            <form id="rentalDetailsForm" class="row">
                 <div class="medium-6 columns">
                     <label>First Name *</label>
-                    <input type="text" name="firstName">
+                    <input type="text" name="firstName" id="firstName" required>
                 </div>
                 <div class="medium-6 columns">
                     <label>Last Name *</label>
-                    <input type="text" name="lastName">
+                    <input type="text" name="lastName" id="lastName" required>
                 </div>
                 <div class="medium-6 columns">
                     <label>Daytime Phone Number *</label>
-                    <input type="tel" name="daytimePhone">
+                    <input type="tel" name="daytimePhone" id="daytimePhone" required>
                 </div>
                 <div class="medium-6 columns">
                     <label>Mobile Phone Number</label>
@@ -255,12 +255,14 @@
                 <label>Email Address</label>
                     <input type="email" name="email">
                 </div>
-            </form>
-            <div>
+            <!-- </form> -->
+            <div class="columns">
                 <h2>Complete Your Registration</h2>
                 <p>All reservations are guaranteed. Payment will be processed at the time you pick up your rental.</p>
-                <a href="#" class="button red-button">Reserve Now</a>
+                
+                 <input class="gray-button go-button" type="submit" name="submitReservation" value="Reserve Now" id="submitReservationButton">
             </div>
+            </form>
         </div>
         <div id="termsAndConditions" class="medium-4 large-offset-1 columns white" data-equalizer-watch>
             <h3>Terms &amp; Conditions</h3>
@@ -384,10 +386,10 @@ NOTE: restrictions and or surcharges apply to cross border travel.</p>
   </div>
     <!-- END OFF CANVAS CLOSING TAGS -->
 
-
             <script src="bower_components/foundation-sites/js/foundation.equalizer.js"></script>
             <script src="bower_components/foundation-sites/js/foundation.offcanvas.js"></script>
             
             <script src="js/app.js"></script>
+            <script src="js/rental-details-validation.js"></script>
         </body>
 </html>
