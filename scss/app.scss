@@ -2228,12 +2228,17 @@ body.no-fouc:before {
 		border-bottom: 1px solid $brandLightBlack;
 	}
 
+
 	ul {
 		list-style: none;
 		margin-left: 0;
 		padding-bottom: 0.5rem;
 		label {
 			font-size: inherit;
+		}
+		li a {
+			text-decoration: underline;
+			font-size: 0.8rem;
 		}
 		li, label {
 			font-weight: bold;
@@ -2243,6 +2248,10 @@ body.no-fouc:before {
 				font-weight: bold;
 			}
 		}
+	}
+	[type='checkbox']+label, [type='radio']+label {
+		margin-left: 0;
+		margin-right: 0;
 	}
 	input[type="checkbox"] {
 		margin: 0;

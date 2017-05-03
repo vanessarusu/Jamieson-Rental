@@ -187,16 +187,27 @@
                                     <ul class="leaders">
                                         <li><span>Vehicle Class: </span> Small Car (2 days)
                                         <span>$39.99</span></li>
+
                                         <!-- <form> -->
                                             <li>
-                                                <input type="checkbox" name="lossDamageWaiver"><span> Loss Damage Waiver </span>($19.99/day, $125.00/week)
+                                                <input type="checkbox" name="lossDamageWaiver" id="lossDamageWaiver">
+                                                <label for="lossDamageWaiver">
+                                                   Loss Damage Waiver
+                                                   ($19.99/day, $125.00/week)
+                                                </label>
                                                 <a href="#">Details</a>
                                                 <span>$0.00</span>
                                             </li>
                                             <li>
-                                                <input type="checkbox" name="lossDamageWaiver"><span> GAP Damage Waiver </span>($6.99/day, $48.93/week)
+                                                <input type="checkbox" name="GAPDamageWaiver" id="GAPDamageWaiver">
+                                                <!-- <span> GAP Damage Waiver </span>($6.99/day, $48.93/week) -->
+                                                <label for="GAPDamageWaiver">
+                                                    GAP Damage Waiver ($6.99/day, $48.93/week)
+                                                </label>
                                                 <a href="#">Details</a>
                                                 <span>$0.00</span>
+
+                                            
                                             </li>
                                         <!-- </form> -->
                                         <li><span>Taxes &amp; Fees</span><span>$7.02</span></li>
@@ -210,10 +221,12 @@
                                                 <li>
                                                     <input type="checkbox" name="offers" value="Unlimited" id="unlimited">
                                                     <label class="green" for="unlimited">Unlimited Kilometers</label>
+                                                    <a href="#">Details</a>
                                                 </li>
                                                 <li>
                                                     <input type="checkbox" name="offers" value="FreePickup" id="freePickup">
                                                     <label class="green" for="freePickup">Free Pickup</label>
+                                                    <a href="#">Details</a>
                                                 </li>
                                             </ul>
                                         </form>
