@@ -1088,7 +1088,7 @@ body.no-fouc:before {
 // GLOBAL -----------------------------------------------------------------
 // ------------------------------------------------------------------------
 // ------------------------------------------------------------------------
-#trucksCommercialHeader, #trucksPersonalHeader, #carSUVHeader, #truckFleetHeader, #aboutUsHeader, #locationsHeader, #searchResultsHeader {
+#trucksCommercialHeader, #trucksPersonalHeader, #carSUVHeader, #truckFleetHeader, #aboutUsHeader, #locationsHeader, #searchResultsHeader, #carFleetHeader {
 	background-size: cover !important;
 }
 
@@ -1549,23 +1549,40 @@ body.no-fouc:before {
 	}
 }
 
+// CAR FLEET -----------------------------------------------------------
+// ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
+#carFleetHeader {
+	background: url(../images/jamieson-car-fleet-bg.jpg)center left no-repeat;
+	color: $brandWhite;
+	h2 {
+		@include bebasHeader(center);
+		padding: 10px 0 20px;
+	}
+	li {
+			@include checkmarkList(20px,24px);
+	}
+	a {
+		width: 100%;
+		margin-top: 1rem;
+		animation-delay: 0.2s;
+		animation-fill-mode: forwards;
+		position: relative;
+	}
+}
+
 
 // TRUCK FLEET -----------------------------------------------------------
 // ------------------------------------------------------------------------
 // ------------------------------------------------------------------------
 
+
 #truckFleetHeader {
 	background: url(../images/truck-fleet-bg.jpg)center left no-repeat;
-	// background-size: cover;
 	color: $brandWhite;
 	h2 {
 		@include bebasHeader(center);
-		// font-family: $bebas-bold;
-		// font-size: 58px;
-		// line-height: 58px;
-		padding: 10px 0 20px;;
-		// animation-delay: 0.2s;
-		// text-align: center;
+		padding: 10px 0 20px;
 	}
 	li {
 			@include checkmarkList(20px,24px);
@@ -1579,7 +1596,6 @@ body.no-fouc:before {
 	}
 }
 #expandAll, #expandAll:hover, #expandAll:active, #expandAll:focus {
-	// float: right;
 	font-weight: bold;
 	background-color: $brandOffwhite;
 	color: $brandBlack;
@@ -2542,13 +2558,13 @@ body.no-fouc:before {
  		width: 100%;
  		margin: 0.5% 0;
 	}
-	#trucksCommercialHeader h2, #trucksCommercialHeader h3, #trucksPersonalHeader h2, #trucksPersonalHeader h3, #carSUVHeader h2, #carSUVHeader h3, #truckFleetHeader h2, #aboutUsHeader h2, #locationsHeader h2, #helpfulTipsHeader h2 {
+	#trucksCommercialHeader h2, #trucksCommercialHeader h3, #trucksPersonalHeader h2, #trucksPersonalHeader h3, #carSUVHeader h2, #carSUVHeader h3, #truckFleetHeader h2, #aboutUsHeader h2, #locationsHeader h2, #helpfulTipsHeader h2, #carFleeHeader h2 {
 		text-align: center;
 		font-size: 42px;
 		line-height: 42px;
 		padding-bottom: 10px;
 	}
-	#trucksCommercialHeader, #trucksPersonalHeader, #carSUVHeader, #truckFleetHeader {
+	#trucksCommercialHeader, #trucksPersonalHeader, #carSUVHeader, #truckFleetHeader, #carFleetHeader {
 		padding-bottom: 40px;
 
 		p {
@@ -2641,7 +2657,7 @@ body.no-fouc:before {
 			margin: 0 auto 2rem;
 		}
 	}
-	#truckFleetHeader {
+	#truckFleetHeader, #carFleetHeader {
 		padding-bottom: 0;
 	}
 
@@ -2956,7 +2972,7 @@ body.no-fouc:before {
 			text-align: center;
 		}
 	}
-	#truckFleetHeader li {
+	#truckFleetHeader li, #carFleetHeader li {
 		text-align: left;
 	}
 	#locationMaps .location-info p, #locationMaps .location-info a {

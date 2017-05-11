@@ -43,7 +43,7 @@
                             <a href="#">Car Rentals</a>
                             <ul class="vertical menu">
                                 <li><a href="car-suv-rentals.html">Search Car or SUV</a></li>
-                                <li><a href="#">Car and SUV Fleet</a></li>
+                                <li><a href="car-suv-fleet.html">Car and SUV Fleet</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Car Sales</a></li>
@@ -125,7 +125,7 @@
                                                 <a href="#">Car Rentals</a>
                                                 <ul class="dropDown">
                                                     <li><a href="car-suv-rentals.html">Search Car or SUV</a></li>
-                                                    <li><a href="#">Car and SUV Fleet</a></li>
+                                                    <li><a href="car-suv-fleet.html">Car and SUV Fleet</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="#">Car Sales</a></li>
@@ -156,7 +156,7 @@
                             <h2>Contact Us</h2>
                         <p>Lorem ipsum dolor sit amet</p>
                         </div>
-                        <form method="POST" action="action-page.php">
+                        <form method="POST">
                             <div class="medium-10 columns medium-offset-1">
                                 <div class="medium-6 columns">
                                     <label>First Name
@@ -190,6 +190,17 @@
                         </form>
                     </div>
                 </section>
+                <script>
+                    $('#contact form').submit(function(e) {
+                        e.preventDefault();
+
+                        //if successful hide the form and change the title
+                         $('#contact form').slideUp(500, function(e) {
+                            $('#contact h2').text('Your form was submitted, thanks!')
+                         });
+
+                    });
+                </script>
     
 
 
@@ -270,7 +281,7 @@
                             <a href="#">Car Rentals</a>
                             <ul>
                                 <li><a href="car-suv-rentals.html">Search Car or SUV</a></li>
-                                <li><a href="#">Car and SUV Fleet</a></li>
+                                <li><a href="car-suv-fleet.html">Car and SUV Fleet</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Car Sales</a></li>
