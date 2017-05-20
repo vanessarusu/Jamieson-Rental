@@ -1088,6 +1088,10 @@ body.no-fouc:before {
 // GLOBAL -----------------------------------------------------------------
 // ------------------------------------------------------------------------
 // ------------------------------------------------------------------------
+
+.sidebarReservations div:nth-child(even) { clear: both; }
+
+
 #trucksCommercialHeader, #trucksPersonalHeader, #carSUVHeader, #truckFleetHeader, #aboutUsHeader, #locationsHeader, #searchResultsHeader, #carFleetHeader {
 	background-size: cover !important;
 }
